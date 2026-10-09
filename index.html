@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Global Weather Pro & Timezone 🌸</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Floating Background Elements -->
+  <div class="bg-cloud cloud1" id="bg1">☁️</div>
+  <div class="bg-cloud cloud2" id="bg2">✨</div>
+  <div class="bg-cloud cloud3" id="bg3">🌸</div>
+
+  <div class="card">
+    <!-- Controls Bar -->
+    <div class="top-controls">
+      <button class="btn-icon" id="geoBtn" title="Use My Current Location">📍 Location</button>
+      <button class="btn-icon" id="unitBtn" title="Switch Temperature Unit">°C</button>
+      <button class="btn-icon" id="speechBtn" title="Read Weather Summary">🔊</button>
+      <button class="btn-icon" id="themeToggle" title="Toggle Light/Dark Theme">🌙</button>
+    </div>
+
+    <!-- Clock Box -->
+    <div class="datetime-container">
+      <div class="tz-badge" id="locationBadge">📍 Loading...</div>
+      <div class="date-display" id="localDate">--</div>
+      <div class="time-display" id="localTime">00:00:00 AM</div>
+      <div class="tz-info" id="tzName">Timezone: UTC</div>
+    </div>
+
+    <!-- Search input -->
+    <div class="search">
+      <input type="text" id="cityInput" placeholder="Search global city..." spellcheck="false" />
+      <button id="searchBtn">🔍</button>
+      <button id="addFavBtn" title="Save City to Favorites">⭐</button>
+    </div>
+
+    <!-- Favorites List -->
+    <div class="favorites-bar" id="favoritesBar"></div>
+
+    <div class="error" id="errorMsg">City not found! Check spelling 🐾</div>
+
+    <!-- Severe Weather Alert Banner -->
+    <div class="alert-banner" id="alertBanner">⚠️ Severe Weather Alert in this area!</div>
+
+    <!-- Calendar View -->
+    <div class="calendar-box">
+      <div class="calendar-header">
+        <button class="cal-btn" id="prevMonth">‹</button>
+        <span id="calMonthYear">--</span>
+        <button class="cal-btn" id="nextMonth">›</button>
+      </div>
+      <div class="calendar-grid" id="calendarGrid"></div>
+    </div>
+
+    <!-- Action Bar -->
+    <div class="action-btn-row">
+      <button class="action-btn" id="toggleSatelliteBtn">📡 Satellite Radar</button>
+    </div>
+
+    <!-- Satellite Box -->
+    <div class="satellite-box" id="satelliteBox">
+      <iframe class="satellite-frame" id="satelliteFrame" src="about:blank"></iframe>
+    </div>
+
+    <!-- Weather Display Area -->
+    <div class="weather" id="weatherBox">
+      <div class="date-badge" id="selectedDateBadge">Today's Weather</div>
+      <div class="weather-icon" id="weatherIcon">☀️</div>
+      <h1 class="temp" id="temp">--°C</h1>
+      <h2 class="city" id="city">--</h2>
+      
+      <!-- 24-Hour Forecast Scroller -->
+      <div class="hourly-title">24-Hour Forecast</div>
+      <div class="hourly-container" id="hourlyContainer"></div>
+
+      <!-- Comprehensive Weather Details -->
+      <div class="details-grid">
+        <div class="col">
+          <p id="humidity">--%</p>
+          <span>💧 Humidity</span>
+        </div>
+        <div class="col">
+          <p id="wind">-- km/h</p>
+          <span>💨 Wind Speed</span>
+        </div>
+        <div class="col">
+          <p id="aqi">--</p>
+          <span>🌱 Air Quality (AQI)</span>
+        </div>
+        <div class="col">
+          <p id="sunTracker">-- / --</p>
+          <span>🌅 Sunrise / Sunset</span>
+        </div>
+      </div>
+
+      <!-- Smart Outfit Suggestion -->
+      <div class="recommendation-box" id="recommendationBox">
+        👗 Outfit Tip: Loading recommendation...
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
